@@ -5,16 +5,20 @@ import View.ViewTemplate;
 import model.Product;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
 
-public class AddProductView extends ViewTemplate {
+public class ProductView extends ViewTemplate {
     private ProductService productService;
 
-    public AddProductView(){
+    public ProductView(){
         productService = new ProductService();
     }
+
     @Override
-    public void showBody() {
+    public  void showBody() {
         System.out.println("--> ADD PRODUCT VIEW");
         Long idProduct = System.currentTimeMillis()/1000;
         System.out.println("Input name:");
@@ -35,4 +39,9 @@ public class AddProductView extends ViewTemplate {
 
         productService.getProducts().add(product);
     }
+
+
+
+
+
 }
